@@ -1,12 +1,18 @@
 /**
- * 
- * @param {int} n The number of digits
- * @returns {int} the sum of the two last digits of the numerical sequence
+ * A function that provides a numerical sequence bases on a number of digits, a fibonacci function
+ * @param {int} n The number of digits 
+ * @returns {Array} Return the numerical sequence based on the number of digits
  */
-function fibonacci(n){
-    if(n < 2){
-        return n;
+function fibs(n){
+    let array = [];
+
+    for(let i = 0; i < n; i++){
+        if(i >= 2){
+            array.push(array[i - 1] + array[i - 2]);
+        } else {
+            array.push(i)
+        }
     }
 
-    return fibonacci(n-1) + fibonacci(n - 2);
+    return array;
 }
