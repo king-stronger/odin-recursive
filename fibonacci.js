@@ -16,3 +16,15 @@ function fibs(n){
 
     return array;
 }
+
+function fibsRec(n, array = [0, 1]){
+    console.log("This print recursively")
+    if(array.length >= n){
+        return array;
+    }
+
+    array.push(array[array.length - 1] + array[array.length - 2]);
+    return fibsRec(n, array);
+}
+
+console.log(fibsRec(3));
